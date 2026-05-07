@@ -1,77 +1,89 @@
-# Project Mission — clauDNA
+# Project Mission — Claudfather
 
 ## What this project is
 
-clauDNA is the canonical set of skills, hooks, and agents for Claude Code, distributed as a marketplace plugin. Install it and any Claude Code instance gains a curated set of well-tested capabilities.
+Claudfather is an open-source ecosystem of four interlocking repositories for building, distributing, and evolving Claude Code agent infrastructure. It exists because running a serious multi-bot fleet today requires gluing together a dozen ad-hoc decisions — how skills are distributed, how bots store and retrieve knowledge, how skill quality is evaluated, how bots coordinate. Claudfather provides opinionated answers to all four questions, designed to work independently or together.
 
-It's the "genome" of the Claudfather ecosystem — what every bot inherits at startup. Skills here are procedural (how to do X), not referential (what we know about X). Reference knowledge lives in Claudron, evaluation happens in Claudosseum, runtime is Claudlobby. clauDNA's job is just: ship the canonical capabilities, predictably, with version discipline.
+The four repositories:
+
+- **clauDNA** — the canonical champion skills, hooks, and agents, distributed as a Claude Code marketplace plugin
+- **Claudosseum** — the promotion engine: an arena where skills are evaluated and evolved, deciding what belongs in clauDNA
+- **Claudlobby** — the always-on multi-bot fleet framework, the reference runtime for operating Claude Code bots in production
+- **Claudron** — the markdown-based knowledge graph that bots query for context and write to as they accumulate experience
+
+Each repo is independently useful. Used together they form a closed loop where bots run on canonical skills, capture knowledge from operation, feed real-world signal back into the arena, and the arena promotes evolved skills into the next canonical release.
 
 ## What it's becoming
 
-A published Claude Code marketplace plugin sourced from arena-promoted champions. In the early phase the maintainer is the promotion engine; once Claudosseum's automation is trustworthy, promotions flow on a defined cadence. End state: any Claude Code user runs `/plugin install claudna@Claudfather` and gets a battle-tested skill set without thinking about provenance.
+A self-improving agent platform. The current state is four repos that work but don't yet talk to each other in the loops described below. The trajectory:
+
+- clauDNA matures from a skill repo into a published marketplace plugin with versioned releases
+- Claudosseum refocuses from "centralized distribution platform" to "promotion engine for clauDNA," with public arena leaderboards and community submission flows
+- Claudlobby integrates clauDNA as its skill source and emits telemetry back to Claudosseum
+- Claudron ships v1 with markdown vault, MCP server, and pack subscription model
+- The loops close: Claudron context grounds Claudosseum battles in real scenarios, Claudosseum promotions ship via clauDNA, Claudlobby bots get smarter on each release
+
+The ambition is that anyone running an agent fleet — solo dev or company — can adopt the entire stack or any subset, with no hosted dependencies required for basic use, and with a clear contribution path back into the canonical skills if their work is broadly useful.
 
 ## North star
 
-Materially smarter Claude Code with one install.
+The place where Claude Code agents are raised, equipped, and continuously improved.
 
 ## Guiding principles
 
-- **Curated quality over quantity.** Better to ship 30 skills that always work than 300 that mostly do.
-- **Stability and predictability.** Users who pin to v0.4 should trust v0.4 behavior never changes. Breaking changes ship as new major versions.
-- **Procedural content only.** If it's a how-to with a clear "when X, do Y" trigger, it belongs here. If it's reference material, it belongs in Claudron.
-- **Marketplace-native distribution.** Plugin install is the only supported channel. Git clone is fine for development; production use goes through the marketplace.
-- **Versioned, changelog'd, documented.** Every release ships with notes on what changed, what got promoted, what got demoted, and what users need to know.
-- **No hosted dependencies for the user.** Installing clauDNA never requires an account or API key. The plugin is self-contained.
+- **Local-first by default.** Anyone can run the entire ecosystem on their own hardware with no hosted dependencies. The one exception is Claudosseum's hosted arena, which is opt-in and does not gate any other repo.
+- **Tight, defensible repo boundaries.** Each repo has one job. clauDNA distributes, Claudosseum evaluates, Claudlobby runs, Claudron stores. When a feature could plausibly live in two repos, it lives in the one whose mission it best serves.
+- **Bots are distinct entities.** Each bot in a Claudlobby fleet has its own GitHub App identity, Telegram bot, persona, and isolated state. The system never collapses bots back into a single shared identity.
+- **Procedural vs. referential is a real distinction.** Skills (procedural, how-to) live in clauDNA. Knowledge (referential, what-we-know) lives in Claudron. They never blur.
+- **Promotion to canonical is high-bar.** Anything that ships as part of clauDNA has earned it through arena evaluation and real-world telemetry. The bar is high precisely because users trust the canonical set.
+- **Multi-tenant by design.** Claudron vaults are owned by their tenant. Claudosseum supports private arenas. Public packs and public arenas are opt-in. Nothing leaks across tenants without explicit publication.
+- **Open source with a sustainable hosted layer.** Everything is OSS. The hosted infrastructure (Claudosseum's arena and registry) is provided as a public service but is replaceable — anyone can self-host.
 
-## Position in the ecosystem
+## The ecosystem
 
-**Consumes:** promotions from Claudosseum (champions ready to ship); manual additions during the early phase.
+```
+┌───────────────────────────────────────────────────────────────┐
+│                         Claudfather                           │
+│                                                               │
+│   ┌───────────┐    promotes    ┌──────────────┐               │
+│   │  clauDNA  │ ◄────────────  │ Claudosseum  │               │
+│   │ (plugin)  │                │   (arena)    │               │
+│   └─────┬─────┘                └──────▲───────┘               │
+│         │ installed                   │ telemetry,            │
+│         │ on bots                     │ scenarios             │
+│         ▼                             │                       │
+│   ┌─────────────┐    queries    ┌─────┴─────────┐             │
+│   │ Claudlobby  │ ────────────► │   Claudron    │             │
+│   │   (fleet)   │ ◄──────────── │  (knowledge)  │             │
+│   └─────────────┘    writes     └───────────────┘             │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
+```
 
-**Produces:** a marketplace plugin that Claudlobby bots install and any Claude Code user can install — the "what skills exist" answer for the entire ecosystem.
+**The promotion loop:** Skills are submitted to or evolved within Claudosseum. They battle in the arena, with telemetry from real Claudlobby deployments contributing to their score alongside ELO. Champions get promoted into clauDNA on a release cadence. Users install the next clauDNA version and their bots get smarter.
 
-**Sibling boundaries:**
-- clauDNA does not handle telemetry. Claudosseum does.
-- clauDNA does not store reference knowledge. Claudron does.
-- clauDNA does not run bots. Claudlobby does.
-- clauDNA does not evaluate skills. Claudosseum does.
+**The knowledge loop:** Claudlobby bots write findings, decisions, and patterns to Claudron during operation. Future bots query Claudron before acting, gaining context that shapes their judgment. Mature reference content stays in Claudron and may be published as public packs. Recurring patterns become candidates for new skills, which enter Claudosseum for evaluation.
 
-## In bounds for autonomous work
-
-**Standing permissions:**
-- Bug fixes in skill content (logic errors, broken examples, outdated references)
-- Documentation, README, CHANGELOG entries
-- Test additions and coverage improvements
-- Reformatting to match marketplace plugin spec
-- Skill metadata corrections (descriptions, argument hints, categorization)
-
-**Current sprint focus:**
-1. Restructure the repo to match Claude Code marketplace plugin requirements
-2. Audit existing skills for v0.1 inclusion — promote keepers, archive the rest
-3. Ship v0.1 of the marketplace plugin with manual curation
-4. Define the release cadence and changelog format
-5. Establish the input contract from Claudosseum: what does a "promoted skill" look like, and how does it land in clauDNA?
-
-## Requires approval
-
-- Adding a new skill to the canonical set (curated repo — additions are consequential)
-- Removing or demoting an existing skill (disruptive for users on prior versions)
-- Major version bumps and breaking changes
-- Marketplace plugin metadata changes (name, description, author, scope)
-- Changes to the input contract from Claudosseum
-- Anything that introduces a hosted dependency for users
-
-## Success metrics
-
-- Marketplace plugin installs trending up over time
-- Low rate of post-release demotions or hot-fixes (quality holding)
-- Predictable release cadence (no months-long gaps, no lurching)
-- Time from Claudosseum promotion to clauDNA release trending down as automation matures
-- Community contributions of skill candidates (via Claudosseum) increasing
+**The grounding loop:** Claudosseum battles draw scenarios from Claudron content (local for personal evaluation, public packs for community evaluation). Skills are evaluated against problems bots have actually encountered, not synthetic test cases.
 
 ## What we choose not to build
 
-- **Runtime skill distribution via MCP.** That was Claudosseum's old role. clauDNA is plugin-only.
-- **A hosted dashboard or web UI.** clauDNA is files in a plugin. Discovery happens via the marketplace and the README.
-- **Telemetry collection.** No phone-home. Telemetry lives in Claudosseum, opt-in.
-- **Per-user customization.** clauDNA is the canonical set. Users wanting personalized skill sets layer their own atop, or run Claudosseum locally to produce their own promotions.
-- **Skills that depend on hosted services.** A skill requiring third-party auth narrows the audience and adds fragility. Skills here should work standalone.
+- **Hosted bot orchestration.** Claudlobby is a framework users run themselves. We will not become a SaaS that runs bots on people's behalf.
+- **A single monolithic repo.** The four-repo split is intentional. Combining them would make each piece harder to adopt independently.
+- **Forced telemetry.** Telemetry from Claudlobby to Claudosseum is opt-in, scrubbed, and never required for any other capability.
+- **A central knowledge hub for everyone.** Claudron is local-first. There is no plan for a hosted shared brain that all deployments query. Federation via public packs is the substitute.
+- **Skill marketplace transactions.** clauDNA is distributed free. We are not building monetization, paid skills, or skill licensing.
+
+## Open questions
+
+These are deliberately unresolved as of this writing — recorded so future development can either close them or note their continued openness.
+
+- The exact promotion criteria from Claudosseum into clauDNA: pure ELO, ELO + telemetry threshold, ELO + maintainer review, or some weighted combination?
+- Claudron's pack discovery model in v1: GitHub topics + word of mouth, or a lightweight central registry?
+- Whether evolved skills in Claudosseum get a staging tier before becoming eligible for promotion, and what the promotion gate looks like.
+- The right cadence for clauDNA releases (weekly, monthly, on-demand when champions change).
+- The federation story for Claudron — whether opt-in instance-to-instance queries are a v2 feature or never built.
+
+## Where this lives
+
+This umbrella mission lives at the org level (in `Claudfather/.github` or a dedicated `Claudfather/claudfather` repo). Each sibling repo carries its own `PROJECT_MISSION.md` that derives from this one and scopes to that repo's specific role.
