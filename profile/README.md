@@ -69,7 +69,7 @@ claudlobby --fleet my-fleet generate
 lib/spin-up-bot.sh local/my-fleet/runtime/bots/my-bot
 ```
 
-Each bot gets its own Telegram channel, GitHub identity, persona, and isolated state.
+Each bot gets its own Telegram channel, persona, and isolated state.
 
 ### "I want skills for my Claude Code"
 
@@ -83,16 +83,11 @@ You now have access to the canonical skill set: code review, commit workflows, d
 
 ### "I want structured knowledge across sessions"
 
-Start with [**Claudron**](https://github.com/Claudfather/Claudron). Init a vault, write knowledge, look it up later.
+Start with [**Claudron**](https://github.com/Claudfather/Claudron). A standalone knowledge engine: init a vault, store structured markdown knowledge, retrieve it across sessions and projects.
 
-```bash
-pip install claudron
-claudron init ~/my-vault
-# Write markdown docs into _shared/knowledge/
-claudron lookup "deployment gotchas"
-```
+Claudron is in design — the CLI is not yet released. Follow the repo for updates.
 
-Works alone. When you add a fleet, Claudron becomes the portable cartridge — clone your vault on any machine, plug it in, your fleet's memory travels with it.
+When it ships, Claudron becomes the portable cartridge for your fleet — clone your vault on any machine, plug it in, your fleet's memory travels with it.
 
 ### "I want to evaluate and evolve skills"
 
