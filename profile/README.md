@@ -50,7 +50,7 @@ Three closed loops drive continuous improvement:
 | :green_circle: | [**Claudlobby**](https://github.com/Claudfather/Claudlobby) | Fleet compositor. `fleet.yaml` + shared library → runnable bot directories with isolated identities, MCP servers, and systemd/launchd supervision. | Active |
 | :green_circle: | [**clauDNA**](https://github.com/Claudfather/clauDNA) | Canonical skills, hooks, and agents for Claude Code. The shared genome bots inherit. Distributed as a marketplace plugin. | Active |
 | :yellow_circle: | [**Claudosseum**](https://github.com/Claudfather/Claudosseum) | Promotion engine. Arena where skills are evaluated against real scenarios. Champions earn their place in clauDNA. | Design |
-| :yellow_circle: | [**Claudron**](https://github.com/Claudfather/Claudron) | Standalone knowledge engine. Init a vault, store structured knowledge, retrieve it across sessions and projects. The fleet's portable memory. | Design |
+| :green_circle: | [**Claudron**](https://github.com/Claudfather/Claudron) | Standalone knowledge engine. Init a vault, store structured knowledge, retrieve it across sessions and projects. The fleet's portable memory. | Active |
 
 ---
 
@@ -85,9 +85,13 @@ You now have access to the canonical skill set: code review, commit workflows, d
 
 Start with [**Claudron**](https://github.com/Claudfather/Claudron). A standalone knowledge engine: init a vault, store structured markdown knowledge, retrieve it across sessions and projects.
 
-Claudron is in design — the CLI is not yet released. Follow the repo for updates.
+```bash
+pip install claudron
+claudron init ~/vault --personal
+claudron --vault ~/vault hooks install --write
+```
 
-When it ships, Claudron becomes the portable cartridge for your fleet — clone your vault on any machine, plug it in, your fleet's memory travels with it.
+Two commands and your Claude Code sessions recall context at start, capture findings before compaction, and sync knowledge through the vault's git repo. The portable cartridge is real: clone your vault on any machine and your memory travels with it.
 
 ### "I want to evaluate and evolve skills"
 
