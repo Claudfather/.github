@@ -1,148 +1,66 @@
-# Claudfather
+<p align="center">
+  <img src="assets/claudfather-mark.webp" width="112" height="112" alt="Claudfather — the robot in the fedora" />
+</p>
 
-**The place where Claude Code agents are raised, equipped, and continuously improved.**
-
-An open-source ecosystem for building production agent fleets. Run distinct, cooperating bots on cheap hardware — each with its own identity, knowledge, and skills. No hosted dependencies required.
-
----
-
-## The Ecosystem
-
-```mermaid
-graph TB
-    subgraph Claudfather["&nbsp;"]
-        direction TB
-
-        clauDNA["<b>clauDNA</b><br/>Skills + Plugins"]
-        Claudosseum["<b>Claudosseum</b><br/>Skills Arena"]
-        Claudlobby["<b>Claudlobby</b><br/>Fleet Runtime"]
-        Claudron["<b>Claudron</b><br/>Knowledge Engine"]
-
-        Claudosseum -- "promotes champions" --> clauDNA
-        clauDNA -- "installed on bots" --> Claudlobby
-        Claudlobby -- "emits telemetry" --> Claudosseum
-        Claudlobby -- "queries knowledge" --> Claudron
-        Claudron -- "grounds scenarios" --> Claudosseum
-        Claudlobby -- "writes findings" --> Claudron
-    end
-
-    style clauDNA fill:#2d333b,stroke:#58a6ff,color:#c9d1d9
-    style Claudosseum fill:#2d333b,stroke:#f78166,color:#c9d1d9
-    style Claudlobby fill:#2d333b,stroke:#7ee787,color:#c9d1d9
-    style Claudron fill:#2d333b,stroke:#d2a8ff,color:#c9d1d9
-    style Claudfather fill:transparent,stroke:none
-```
-
-Three closed loops drive continuous improvement:
-
-| Loop | How it works |
-|------|-------------|
-| **Promotion** | Skills enter Claudosseum, battle with real-world telemetry scoring, champions ship in the next clauDNA release |
-| **Knowledge** | Bots write findings to Claudron during operation. Future bots query before acting. Recurring patterns become skill candidates |
-| **Grounding** | Claudosseum draws battle scenarios from Claudron content — skills are evaluated against problems bots actually encountered |
+<h1 align="center">Claudfather</h1>
+<p align="center"><strong>Run a fleet of AI workers.</strong></p>
+<p align="center">
+  Specialist teams on hardware you own.<br />
+  Open-source tools for solo founders and small teams.
+</p>
+<p align="center">
+  <a href="https://github.com/Claudfather/Claudlobby#quick-start"><strong>Build your first team →</strong></a>
+  &nbsp; · &nbsp;
+  <a href="https://www.crog.gg/projects/claudlobby">See what it does</a>
+  &nbsp; · &nbsp;
+  <a href="https://github.com/Claudfather/Claudlobby/releases">Follow releases</a>
+</p>
 
 ---
 
-## Repositories
+## Give your team a goal
 
-| | Repo | What it does | Status |
-|---|------|-------------|--------|
-| :green_circle: | [**Claudlobby**](https://github.com/Claudfather/Claudlobby) | Fleet compositor. `fleet.yaml` + shared library → runnable bot directories with isolated identities, MCP servers, and systemd/launchd supervision. | Active |
-| :green_circle: | [**clauDNA**](https://github.com/Claudfather/clauDNA) | Canonical skills, hooks, and agents for Claude Code. The shared genome bots inherit. Distributed as a marketplace plugin. | Active |
-| :yellow_circle: | [**Claudosseum**](https://github.com/Claudfather/Claudosseum) | Promotion engine. Arena where skills are evaluated against real scenarios. Champions earn their place in clauDNA. | Design |
-| :yellow_circle: | [**Claudron**](https://github.com/Claudfather/Claudron) | Standalone knowledge engine. Init a vault, store structured knowledge, retrieve it across sessions and projects. The fleet's portable memory. | Design |
+An engineer to build. A reviewer to check the work. A product strategist to work out who it serves. Add the roles your business needs, give them tools and direction, and follow their progress.
 
----
+Claudfather brings together the software to compose those teams, equip them with useful workflows, and preserve what they learn. Your fleet runs on a **Mac mini, Linux machine, or Raspberry Pi**. You choose its projects, credentials, and operating rules.
 
-## Quick Start
+| Build a team | Keep work moving | Keep what you learn |
+| --- | --- | --- |
+| Compose distinct roles, skills, and tool connections from a shared library. | Supervise the agents, coordinate assignments, and follow activity in Plane or Telegram. | Capture useful findings and decisions in a portable Markdown vault. |
 
-### "I want to run an agent fleet"
+## Meet the family
 
-Start with [**Claudlobby**](https://github.com/Claudfather/Claudlobby). Clone, write a `fleet.yaml`, generate, run.
+Each project has a job. Start with the part you need.
 
-```bash
-git clone https://github.com/Claudfather/Claudlobby.git
-cd Claudlobby
-cp fleet.yaml.example local/my-fleet/fleet.yaml
-# Edit fleet.yaml — define your bots
-claudlobby --fleet my-fleet generate
-lib/spin-up-bot.sh local/my-fleet/runtime/bots/my-bot
-```
+| Project | What it brings to your team | Start here |
+| --- | --- | --- |
+| **[Claudlobby](https://github.com/Claudfather/Claudlobby)** | Composition, installation, permissions, supervision, and **Plane**, the shared view of your team's work. | [Run a fleet](https://github.com/Claudfather/Claudlobby/blob/main/documentation/getting-started.md) |
+| **[clauDNA](https://github.com/Claudfather/clauDNA)** | Reusable engineering workflows: planning, building, review, verification, and operations. Useful in an individual coding session, too. | [Install the skills](https://github.com/Claudfather/clauDNA#quick-start) |
+| **[Claudron](https://github.com/Claudfather/Claudron)** | Durable knowledge in local Markdown vaults, with a CLI for capture, recall, search, and validation. | [Start a vault](https://github.com/Claudfather/Claudron#quick-start) |
+| **[Claudosseum](https://github.com/Claudfather/Claudosseum)** | Skill evaluation and experimentation: compare candidates, inspect results, and develop better workflows. | [Explore the arena](https://github.com/Claudfather/Claudosseum#arena) |
 
-Each bot gets its own Telegram channel, persona, and isolated state.
+## One workspace for your teams
 
-### "I want skills for my Claude Code"
+**Claudfather.ai is the website experience we're building around this core:** a place to set up a workspace, connect your machines, and follow your teams together.
 
-Start with [**clauDNA**](https://github.com/Claudfather/clauDNA). Install as a plugin — one command.
+The shared **Plane UI stays in Claudlobby**. Hosts retain their operational data and decide who may access it. The website adds accounts, workspace navigation, and setup guidance; the fleet can operate independently of the website.
 
-```bash
-claude plugins install Claudfather/clauDNA
-```
+> **In development:** the [hosted preview](https://claudfather-ai.vercel.app) uses synthetic data. Real sign-in, owner access, and connected-host onboarding are still being built. It does not send work to a real team.
 
-You now have access to the canonical skill set: code review, commit workflows, deployment, knowledge management, and more. Works standalone — no fleet required.
+## Start small. Build something useful.
 
-### "I want structured knowledge across sessions"
+1. **Run one team.** Follow Claudlobby's [setup guide](https://github.com/Claudfather/Claudlobby/blob/main/documentation/getting-started.md), including its prerequisites and [safety model](https://github.com/Claudfather/Claudlobby#safety-model).
+2. **Give it a concrete project.** Start with a bounded task you can inspect and review. Expand its responsibility as you learn how it behaves.
+3. **Make the next run better.** Keep useful knowledge in Claudron and reusable workflows in clauDNA.
 
-Start with [**Claudron**](https://github.com/Claudfather/Claudron). A standalone knowledge engine: init a vault, store structured markdown knowledge, retrieve it across sessions and projects.
+**Early alpha.** Expect rough edges in setup and operation. Claude Code is the established execution path; other agent CLIs are an active area of development. Each repository's documentation and releases describe its supported capabilities. Local hosting still requires your chosen model providers and connected services.
 
-Claudron is in design — the CLI is not yet released. Follow the repo for updates.
+## Help build it
 
-When it ships, Claudron becomes the portable cartridge for your fleet — clone your vault on any machine, plug it in, your fleet's memory travels with it.
+Bring a reproducible bug, a useful workflow, a clearer guide, or a small improvement to the project that owns it. Follow that repository's contribution instructions and verification requirements.
 
-### "I want to evaluate and evolve skills"
-
-Start with [**Claudosseum**](https://github.com/Claudfather/Claudosseum). Submit skills, run battles, promote winners.
+[Product overview](https://www.crog.gg/projects/claudlobby) · [Mission](https://github.com/Claudfather/.github/blob/main/PROJECT_MISSION.md) · [Brand reference](https://github.com/Claudfather/.github/blob/main/BRAND.md) · [Claudlobby issues](https://github.com/Claudfather/Claudlobby/issues)
 
 ---
 
-## Philosophy
-
-**Fleet-first.** Most agent tooling assumes one bot, one task, one session. Claudfather assumes a squad: distinct identities coordinating on shared work, each with their own expertise. The architecture supports one bot cleanly but shines at five.
-
-**Composable, not monolithic.** Each repo is independently useful. clauDNA works without Claudlobby. Claudron works without a fleet. Claudosseum evaluates skills from any source. Adopt one piece or the full stack — no lock-in between layers.
-
-**Personality-rich.** Bots are entities, not threads. Each gets a voice, expertise domains, guardrails, and communication style. A code reviewer and a designer on the same fleet behave differently because they are different. The system never collapses them into a generic "AI assistant."
-
-**Local-first.** A fleet runs on a Pi in a closet. No cloud dependencies for basic operation. Git-backed knowledge. File-based configuration. Plain markdown docs. Everything version-controlled, everything inspectable, everything yours.
-
-**High-bar canonical.** Skills that ship in clauDNA earned their place through arena evaluation against real-world scenarios. The canonical set is trusted precisely because promotion is hard.
-
----
-
-## Architecture at a Glance
-
-```
-You (human)
- │
- ├── claude plugins install clauDNA     ← skills for any Claude Code session
- │
- ├── claudron init ~/vault              ← structured knowledge, any project
- │
- └── claudlobby generate                ← full fleet: bots + skills + knowledge
-      │
-      ├── Bot: manager (orchestrates via tmux)
-      ├── Bot: engineer (writes code, opens PRs)
-      ├── Bot: designer (visual QA, screenshots)
-      └── Bot: reviewer (code review, standards)
-           │
-           ├── Each bot installs clauDNA (skills)
-           ├── Each bot queries Claudron (knowledge)
-           └── Each bot emits signal to Claudosseum (optional)
-```
-
----
-
-## Contributing
-
-Each repo has its own contribution guidelines. Start with the repo closest to your interest:
-
-- **Skills and plugins** → [clauDNA](https://github.com/Claudfather/clauDNA)
-- **Fleet tooling and lifecycle scripts** → [Claudlobby](https://github.com/Claudfather/Claudlobby)
-- **Knowledge engine and vault spec** → [Claudron](https://github.com/Claudfather/Claudron)
-- **Arena mechanics and evaluation** → [Claudosseum](https://github.com/Claudfather/Claudosseum)
-
-See [PROJECT_MISSION.md](https://github.com/Claudfather/.github/blob/main/PROJECT_MISSION.md) for the full vision, design decisions, and open questions.
-
----
-
-<sub>Local-first. Open source. No hosted dependencies required.</sub>
+<p align="center"><sub>Rise of the machines. And really bad puns.</sub></p>
