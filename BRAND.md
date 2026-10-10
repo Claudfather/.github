@@ -10,7 +10,7 @@ A shared reference for the GitHub organization, Claudfather.ai, project READMEs,
 
 Lead with the person's work and the team that helps do it. Explain manifests, runtimes, and protocol details where they help someone take the next step. Describe capabilities plainly, keep jokes light, and distinguish what works now from what is being built.
 
-The established informal signature is **“Rise of the machines. And really bad puns.”** Keep it secondary to the product explanation.
+The tagline is **“Rise of the machines”**. Keep it secondary to the product explanation.
 
 ## Names and roles
 
