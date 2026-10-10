@@ -48,10 +48,10 @@ Use orange as an accent. Native GitHub text and surfaces should follow the reade
 - **Website development preview:** [claudfather-ai.vercel.app](https://claudfather-ai.vercel.app). Label it synthetic and in development. Do not present the custom domain as launched until it is verified live.
 - **Updates:** [Claudlobby releases](https://github.com/Claudfather/Claudlobby/releases).
 
-The core is open source. The website is privately developed; avoid “everything is open source.” Local hosting does not mean every model or connected service runs offline. Distinct bot roles do not establish OS isolation or a separate GitHub App identity for each bot. Arena-driven promotion is an integration to verify, not a blanket claim about every shipped skill.
+The core is open source. The website is privately developed; avoid “everything is open source.” Local hosting does not mean every model or connected service runs offline. Distinct bot roles do not establish OS isolation, a separate GitHub App identity for each bot, or private per-team permissions. Arena-driven promotion is an integration to verify, not a blanket claim about every shipped skill.
 
 ## Keeping the surfaces aligned
 
-When a product name, primary destination, or capability changes, update this reference and the organization profile together. Check the Claudfather.ai shell and the Claudlobby content in crog.gg for the same change, following each repository's own release process. Keep implementation status in the owning repository and link to it; avoid unsourced counts, stale install snippets, and “coming soon” labels on released tools.
+When a product name, primary destination, or capability changes, update this reference, the mission, and the organization profile together. Check the Claudfather.ai shell and the Claudlobby content in crog.gg for the same change, following each repository's own release process. Verify the heading anchors linked from the organization profile whenever a linked repository changes its README. Keep implementation status in the owning repository and link to it; avoid unsourced counts, stale install snippets, and “coming soon” labels on released tools.
 
 Source references: the [Claudlobby project page](https://www.crog.gg/projects/claudlobby), its [content source](https://github.com/chrisrogers37/crog-gg/blob/main/frontend/src/content/claudlobby.ts), and the website preview. Reference refreshed 2026-10-07.

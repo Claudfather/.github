@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/claudfather-mark.webp" width="112" height="112" alt="Claudfather — the robot in the fedora" />
+  <img src="assets/claudfather-mark.webp" width="80" height="80" alt="Claudfather — the robot in the fedora" />
 </p>
 
 <h1 align="center">Claudfather</h1>
@@ -9,7 +9,7 @@
   Open-source tools for solo founders and small teams.
 </p>
 <p align="center">
-  <a href="https://github.com/Claudfather/Claudlobby#quick-start"><strong>Build your first team →</strong></a>
+  <a href="https://github.com/Claudfather/Claudlobby/blob/main/documentation/getting-started.md"><strong>Build your first team →</strong></a>
   &nbsp; · &nbsp;
   <a href="https://www.crog.gg/projects/claudlobby">See what it does</a>
   &nbsp; · &nbsp;
