@@ -63,4 +63,4 @@ Bring a reproducible bug, a useful workflow, a clearer guide, or a small improve
 
 ---
 
-<p align="center"><sub>Rise of the machines. And really bad puns.</sub></p>
+<p align="center"><sub>Rise of the machines</sub></p>
