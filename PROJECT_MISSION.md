@@ -15,7 +15,6 @@ The first users can be technical. The longer-term aim is to make this accessible
 | **Claudlobby** | Composition, installation and setup state, integration wiring, permissions, secrets on the host, supervision, operational records, and the canonical Plane display and actions. |
 | **clauDNA** | Engineering workflow behavior: the skills, agents, hooks, and procedures a team uses to do and verify work. |
 | **Claudron** | Durable reference knowledge: findings, decisions, and runbooks in portable Markdown vaults. Its integration door is the CLI. |
-| **Claudosseum** | Skill evaluation and experimentation. Evaluation results inform improvements; an automatic promotion loop across the whole family is not a promise of current behavior. |
 | **Claudfather.ai** | The website experience: accounts, workspaces, navigation, connection metadata, and guidance through the core setup and operating flows. This layer is in development. |
 
 The core projects are independently useful. clauDNA can support an individual coding session, and Claudron can serve a project without a fleet. The website consumes the shared core; improvements to Plane belong in Claudlobby and should benefit direct host access as well.
@@ -36,16 +35,16 @@ The website direction is a workspace that can connect multiple authorized deploy
 
 Tailscale on the host and viewing device is the initial connectivity direction. It supplies reachability, not application permission. Owner pairing, trusted caller verification, current grants, and revocation must be proven before the new website path exposes private host data. Independent direct access is part of the intended outage path.
 
-The open-source core and the privately developed website are separate publishing concerns. The current website preview is synthetic. It has no real account sign-in, connected fleet authority, or live bot actions.
+The open-source core and the privately developed website are separate publishing concerns. The public site at claudfather.ai is a visitor page for a product in private development, with no sign-up, waitlist, or public demo. Website access to a host is offered publicly only after the boundary above is proven.
 
 ## What earns the next milestone
 
 A person can bring a host, launch a new team, connect an authorized project, receive useful reviewed work, give feedback, and return later with its context intact. This requires evidence through the setup and operating journey on macOS and Linux, alongside the supported laptop and phone access paths.
 
-Intermediate prototypes, passing unit tests, and a hosted page each establish only part of that journey. Current implementation status lives in the owning repositories and their releases and pull requests.
+Intermediate prototypes, passing unit tests, and a hosted page each establish only part of that journey. Current implementation status lives in the owning repositories and their changelogs, releases, and pull requests.
 
 ## Scope
 
 We build the tools for teams that run on user-controlled machines. We do not promise hosted bot execution, automatic access to every member of a tailnet, or automatic publication of a user's knowledge. Each repository owns its detailed roadmap and contribution process.
 
-The [organization profile](profile/README.md) is the public introduction. The [brand reference](BRAND.md) keeps naming, visual cues, and product descriptions aligned with the website and the Claudlobby page on crog.gg.
+The [organization profile](profile/README.md) is the public introduction. The [brand reference](BRAND.md) keeps naming, visual cues, and product descriptions aligned with the website and the Claudfather page on crog.gg. Organization-wide [contribution](CONTRIBUTING.md) and [security](SECURITY.md) defaults apply to any repository without its own.

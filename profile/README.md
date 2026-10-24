@@ -11,9 +11,9 @@
 <p align="center">
   <a href="https://github.com/Claudfather/Claudlobby/blob/main/documentation/getting-started.md"><strong>Build your first team →</strong></a>
   &nbsp; · &nbsp;
-  <a href="https://www.crog.gg/projects/claudlobby">See what it does</a>
+  <a href="https://www.crog.gg/projects/claudfather">See what it does</a>
   &nbsp; · &nbsp;
-  <a href="https://github.com/Claudfather/Claudlobby/releases">Follow releases</a>
+  <a href="https://github.com/Claudfather/Claudlobby/blob/main/CHANGELOG.md">Follow changes</a>
 </p>
 
 ---
@@ -37,7 +37,6 @@ Each project has a job. Start with the part you need.
 | **[Claudlobby](https://github.com/Claudfather/Claudlobby)** | Composition, installation, permissions, supervision, and **Plane**, the shared view of your team's work. | [Run a fleet](https://github.com/Claudfather/Claudlobby/blob/main/documentation/getting-started.md) |
 | **[clauDNA](https://github.com/Claudfather/clauDNA)** | Reusable engineering workflows: planning, building, review, verification, and operations. Useful in an individual coding session, too. | [Install the skills](https://github.com/Claudfather/clauDNA#quick-start) |
 | **[Claudron](https://github.com/Claudfather/Claudron)** | Durable knowledge in local Markdown vaults, with a CLI for capture, recall, search, and validation. | [Start a vault](https://github.com/Claudfather/Claudron#quick-start) |
-| **[Claudosseum](https://github.com/Claudfather/Claudosseum)** | Skill evaluation and experimentation: compare candidates, inspect results, and develop better workflows. | [Explore the arena](https://github.com/Claudfather/Claudosseum#arena) |
 
 ## One workspace for your teams
 
@@ -45,7 +44,7 @@ Each project has a job. Start with the part you need.
 
 The shared **Plane UI stays in Claudlobby**. Hosts retain their operational data and decide who may access it. The website adds accounts, workspace navigation, and setup guidance; the fleet can operate independently of the website.
 
-> **In development:** the [hosted preview](https://claudfather-ai.vercel.app) uses synthetic data. Real sign-in, owner access, and connected-host onboarding are still being built. It does not send work to a real team.
+> **In private development:** [claudfather.ai](https://claudfather.ai) has no sign-up, waitlist, or public demo yet. To run a team today, use Claudlobby directly.
 
 ## Start small. Build something useful.
 
@@ -53,13 +52,13 @@ The shared **Plane UI stays in Claudlobby**. Hosts retain their operational data
 2. **Give it a concrete project.** Start with a bounded task you can inspect and review. Expand its responsibility as you learn how it behaves.
 3. **Make the next run better.** Keep useful knowledge in Claudron and reusable workflows in clauDNA.
 
-**Early alpha.** Expect rough edges in setup and operation. Claude Code is the established execution path; other agent CLIs are an active area of development. Each repository's documentation and releases describe its supported capabilities. Local hosting still requires your chosen model providers and connected services.
+**Early alpha.** Expect rough edges in setup and operation. Claude Code is the established execution path; other agent CLIs are an active area of development. Each repository's documentation and changelog describe its supported capabilities. Local hosting still requires your chosen model providers and connected services.
 
 ## Help build it
 
-Bring a reproducible bug, a useful workflow, a clearer guide, or a small improvement to the project that owns it. Follow that repository's contribution instructions and verification requirements.
+Bring a reproducible bug, a useful workflow, a clearer guide, or a small improvement to the project that owns it. Follow that repository's contribution instructions and verification requirements, or the [organization defaults](https://github.com/Claudfather/.github/blob/main/CONTRIBUTING.md) where it has none. Report security problems privately through the [security policy](https://github.com/Claudfather/.github/blob/main/SECURITY.md), not in a public issue.
 
-[Product overview](https://www.crog.gg/projects/claudlobby) · [Mission](https://github.com/Claudfather/.github/blob/main/PROJECT_MISSION.md) · [Brand reference](https://github.com/Claudfather/.github/blob/main/BRAND.md) · [Claudlobby issues](https://github.com/Claudfather/Claudlobby/issues)
+[Product overview](https://www.crog.gg/projects/claudfather) · [Mission](https://github.com/Claudfather/.github/blob/main/PROJECT_MISSION.md) · [Brand reference](https://github.com/Claudfather/.github/blob/main/BRAND.md) · [Claudlobby issues](https://github.com/Claudfather/Claudlobby/issues)
 
 ---
 
