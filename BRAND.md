@@ -1,6 +1,6 @@
 # Claudfather brand reference
 
-A shared reference for the GitHub organization, Claudfather.ai, project READMEs, and Claudfather project pages on crog.gg. This records the existing direction; it is not a complete product design system.
+A shared reference for the GitHub organization, Claudfather.ai, project READMEs, and the Claudfather project page on crog.gg. This records the existing direction; it is not a complete product design system.
 
 ## Message
 
@@ -29,7 +29,7 @@ crog.gg remains the creator's personal site. Its Claudfather project page explai
 
 Use the existing robot-in-a-fedora mark. The profile's [mark](profile/assets/claudfather-mark.webp) is reused unchanged from the website and matches the crog.gg/GitHub identity. Keep its proportions and provide descriptive alt text; do not redraw it for individual repositories.
 
-The current website shell and the Claudfather project page on crog.gg use:
+The canonical palette matches the GitHub organization mark and the Claudfather project page on crog.gg:
 
 | Token | Value | Use |
 | --- | --- | --- |
@@ -40,17 +40,19 @@ The current website shell and the Claudfather project page on crog.gg use:
 
 Use orange as an accent. Native GitHub text and surfaces should follow the reader's theme. Operational status needs its own explicit labels and accessible semantic colors; do not turn every state orange to match the brand. The full application palette remains a later design task.
 
+claudfather.ai currently uses slightly different values (charcoal `#252725`, orange `#DC742A`, ink `#282B27`). Bring the website to this palette, not the reverse.
+
 ## Links and current claims
 
 - **Get started:** [Claudlobby setup](https://github.com/Claudfather/Claudlobby/blob/main/documentation/getting-started.md). Link to the owning guide instead of copying commands into every surface.
 - **Product explanation:** [Claudfather on crog.gg](https://www.crog.gg/projects/claudfather). The older `/projects/claudlobby` path redirects there; link the current path.
-- **Website:** [claudfather.ai](https://claudfather.ai). Label it in private development: no sign-up, waitlist, or public demo. Do not present it as launched until public sign-up is verified live. The [Vercel deployment](https://claudfather-ai.vercel.app) serves the same visitor page; prefer the domain.
+- **Website:** [claudfather.ai](https://claudfather.ai). Describe it as in private development: no sign-up, waitlist, or public demo. Do not present it as launched until public sign-up is verified live. The [Vercel deployment](https://claudfather-ai.vercel.app) serves the same visitor page; prefer the domain.
 - **Updates:** each project's changelog: [Claudlobby](https://github.com/Claudfather/Claudlobby/blob/main/CHANGELOG.md), [clauDNA](https://github.com/Claudfather/clauDNA/blob/main/CHANGELOG.md), [Claudron](https://github.com/Claudfather/Claudron/blob/main/CHANGELOG.md). clauDNA and Claudron also publish GitHub releases; Claudlobby does not yet, so do not link its releases page.
 
 The core is open source. The website is privately developed; avoid “everything is open source.” Local hosting does not mean every model or connected service runs offline. Distinct bot roles do not establish OS isolation, a separate GitHub App identity for each bot, or private per-team permissions.
 
 ## Keeping the surfaces aligned
 
-When a product name, primary destination, or capability changes, update this reference, the mission, and the organization profile together. Check the Claudfather.ai shell and the Claudfather content in crog.gg for the same change, following each repository's own release process. Verify the heading anchors linked from the organization profile whenever a linked repository changes its README. When a repository is made private or archived, remove it from the profile, the mission, and this reference in the same change; a public visitor sees a 404. Keep implementation status in the owning repository and link to it; avoid unsourced counts, stale install snippets, and “coming soon” labels on released tools.
+When a product name, primary destination, or capability changes, update this reference, the mission, and the organization profile together, along with `SECURITY.md` and `CONTRIBUTING.md` where they name projects. Check the Claudfather.ai shell and the Claudfather content in crog.gg for the same change, following each repository's own release process. Verify the heading anchors linked from the organization profile whenever a linked repository changes its README. When a repository is made private (public visitors then get a 404) or archived, remove it from the profile, the mission, this reference, `SECURITY.md`, and `CONTRIBUTING.md` in the same change. Keep implementation status in the owning repository and link to it; avoid unsourced counts, stale install snippets, and “coming soon” labels on released tools.
 
 Source references: the [Claudfather project page](https://www.crog.gg/projects/claudfather), its [content source](https://github.com/chrisrogers37/crog-gg/blob/main/frontend/src/content/claudfather.ts), and [claudfather.ai](https://claudfather.ai). Reference refreshed 2026-10-24.

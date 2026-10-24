@@ -56,7 +56,7 @@ The shared **Plane UI stays in Claudlobby**. Hosts retain their operational data
 
 ## Help build it
 
-Bring a reproducible bug, a useful workflow, a clearer guide, or a small improvement to the project that owns it. Follow that repository's contribution instructions and verification requirements, or the [organization defaults](https://github.com/Claudfather/.github/blob/main/CONTRIBUTING.md) where it has none. Report security problems privately, as the [security policy](https://github.com/Claudfather/.github/blob/main/SECURITY.md) describes, never in a public issue.
+Bring a reproducible bug, a useful workflow, a clearer guide, or a small improvement to the project that owns it. Follow that repository's contribution instructions and verification requirements, or the [organization defaults](https://github.com/Claudfather/.github/blob/main/CONTRIBUTING.md) where it has none. Report security problems privately through the [security policy](https://github.com/Claudfather/.github/blob/main/SECURITY.md), not in a public issue.
 
 [Product overview](https://www.crog.gg/projects/claudfather) · [Mission](https://github.com/Claudfather/.github/blob/main/PROJECT_MISSION.md) · [Brand reference](https://github.com/Claudfather/.github/blob/main/BRAND.md) · [Claudlobby issues](https://github.com/Claudfather/Claudlobby/issues)
 
