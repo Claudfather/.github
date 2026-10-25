@@ -1,8 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Report a security vulnerability
-    url: https://github.com/Claudfather/.github/blob/main/SECURITY.md
-    about: Report privately through GitHub's private vulnerability reporting, never in a public issue.
   - name: Not sure which project to file in?
     url: https://github.com/Claudfather/.github/blob/main/CONTRIBUTING.md#find-the-project-that-owns-the-change
     about: Each Claudfather project owns its own issues. Find the right repository first.
